@@ -19,13 +19,13 @@ function getWeather() {
             return response.json();
         })
         .then(data => {
-            const { name, main, weather } = data;
+            const { name, main, weather, sys } = data;
             const temperature = main.temp;
             const description = weather[0].description;
             const icon = weather[0].icon;
 
             weatherResult.innerHTML = `
-                <h2>${name}</h2>
+                <h2>${name}, ${sys.country}</h2>
                 <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Ícone do tempo">
                 <p>Temperatura: ${temperature.toFixed(1)}°C</p>
                 <p>Clima: ${description}</p>
