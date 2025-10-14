@@ -1,13 +1,16 @@
-
 function getWeather() {
     const city = document.getElementById('cityInput').value;
-    const apiKey = 'd00e62b3bd56d83bdee529e19b4a661a'; // Substitua pela sua chave de API
+    const apiKey = 'b0c91e25b28156d41ced18f4c0240240'; // Substitua pela sua chave de API
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric&lang=pt_br`;
 
     const weatherResult = document.getElementById('weatherResult');
+    const cityName = document.getElementById('cityName');
+    const weatherIcon = document.getElementById('weatherIcon');
+    const weatherDescription = document.getElementById('weatherDescription');
+    const weatherTemperature = document.getElementById('weatherTemperature');
 
     if (!city) {
-        weatherResult.innerHTML = 'Por favor, digite o nome de uma cidade.';
+        alert('Por favor, digite o nome de uma cidade.');
         return;
     }
 
@@ -24,14 +27,15 @@ function getWeather() {
             const description = weather[0].description;
             const icon = weather[0].icon;
 
-            weatherResult.innerHTML = `
-                <h2>${name}, ${sys.country}</h2>
-                <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Ícone do tempo">
-                <p>Temperatura: ${temperature.toFixed(1)}°C</p>
-                <p>Clima: ${description}</p>
-            `;
+            cityName.textContent = `${name}, ${sys.country}`;
+            weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+            weatherDescription.textContent = description;
+            weatherTemperature.textContent = `${temperature.toFixed(0)}°C`;
+
+            weatherResult.style.display = 'block';
         })
         .catch(error => {
-            weatherResult.innerHTML = `Erro: ${error.message}`;
+            alert(`Erro: ${error.message}`);
+            weatherResult.style.display = 'none';
         });
 }
