@@ -1,0 +1,18 @@
+@use '../../styles/variables' as v;
+
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+
+  p{
+    display: flex;
+    justify-content: center;
+    color: v.$text-color;
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+    
+  }
+}

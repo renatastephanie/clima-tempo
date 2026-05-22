@@ -1,0 +1,19 @@
+@use "../../styles/variables" as v;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: v.$text-color;
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
+  }
+}
