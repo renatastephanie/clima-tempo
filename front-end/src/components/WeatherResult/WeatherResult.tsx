@@ -1,5 +1,5 @@
 import type { WeatherData } from "../../types/weather";
-import styles from "./WeatherResult.module.css";
+import styles from "./WeatherResult.module.scss";
 
 interface WeatherResultProps {
   weather: WeatherData | null;
