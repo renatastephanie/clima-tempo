@@ -1,0 +1,50 @@
+@use "../../styles/variables" as v;
+
+.weatherResult {
+  background-color: v.$primary-light;
+  border-radius: v.$radius-medium;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: v.$text-color;
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem 0;
+  }
+
+  .temperature {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: v.$text-color;
+
+    @media (max-width: 480px) {
+      font-size: 3rem;
+    }
+  }
+
+  .description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: v.$text-color;
+  }
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+  font-weight: 600;
+  text-align: center;
+}
