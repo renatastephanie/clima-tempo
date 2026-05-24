@@ -44,4 +44,4 @@ npm run dev
 ```
 
 ## Visualização do Projeto
-Para acessar o projeto online, [clique aqui](https://clima-tempo-omega-two.vercel.app/).
+Para acessar o projeto online, [clique aqui](https://clima-tempo-ccel.vercel.app/).
