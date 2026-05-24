@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSearch = async () => {
-    if (city) {
+    if (!city) {
       setError("Por favor, digite o nome de uma cidade.");
       return;
     }

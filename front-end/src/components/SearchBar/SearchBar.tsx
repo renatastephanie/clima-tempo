@@ -16,7 +16,7 @@ export const SearchBar = ({ city, onCityChange, onSearch }: SearchBarProps) => {
         onChange={(e) => onCityChange(e.target.value)}
       />
 
-      <button onChange={onSearch}>Buscar</button>
+      <button onClick={onSearch}>Buscar</button>
     </div>
   );
 };
